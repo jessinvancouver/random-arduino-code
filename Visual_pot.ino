@@ -2,57 +2,57 @@
 
 //pin numbers
 //LED pin arrays
-const int ledpins[] = {
-  1,2,3,4,5,6,7,8,9,10,11,12 };
-const int pot_pin = A0
+const int ledPins[] = {1,2,3,4,5,6,7,8,9,10,11,12};
+const int pot_pin = A0;
 //sensor variables
-int pot_in = 0
+int pot_in = 0;
 
 void setup() {
 //asigning pin config
- for (int i = 12; i < 12; i++) {
-  pinMode(ledpins[i], OUTPUT);   
+ for (int i=0 ; i = 12; i++){
+  pinMode(ledPins[i], OUTPUT); 
+  pinMode(13, OUTPUT);
  }
 
-  //  setup serial
+   // setup serial
   Serial.begin(9600);  
   
-}
+};
 
 void loop() {
-  //
+  
   pot_in = analogRead(pot_pin);
-  if (int pot_pin < 100) {
+  if (pot_in > 100){
     digitalWrite(ledPins[1], HIGH);
   }
-  if (int pot_pin < 200) {
+  if (pot_in < 200) {
     digitalWrite(ledPins[2], HIGH);
-  }  
-  if (int pot_pin < 300) {
+  } 
+  if (pot_in < 300) {
     digitalWrite(ledPins[3], HIGH);
-  }    
-  if (int pot_pin < 400) {
+  }   
+  if (pot_in < 400) {
     digitalWrite(ledPins[4], HIGH);
   }  
-  if (int pot_pin < 500) {
+  if (pot_in < 500) {
     digitalWrite(ledPins[5], HIGH);
   }    
-  if (int pot_pin < 600) {
+  if (pot_in < 600) {
     digitalWrite(ledPins[6], HIGH);
   }    
-  if (int pot_pin < 700) {
+  if (pot_in < 700) {
     digitalWrite(ledPins[7], HIGH);
   }
-  if (int pot_pin < 800) {
+  if (pot_in < 800) {
     digitalWrite(ledPins[8], HIGH);
   }    
-  if (int pot_pin < 900) {
+  if (pot_in < 900) {
     digitalWrite(ledPins[9], HIGH);
   }      
-   if (int pot_pin < 1000) {
+   if (pot_in < 1000) {
     digitalWrite(ledPins[10], HIGH);
   }      
-   if (int pot_pin < 1024) {
-    digitalWrite(ledPins[10], HIGH);
+   if (pot_in < 1024) {
+    digitalWrite(ledPins[11], HIGH);
   }      
-}
+};
