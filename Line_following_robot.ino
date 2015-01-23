@@ -48,6 +48,39 @@
   //light (not line);
   int nline = 450;
   
+
+
+
+//----------program init--------------------------
+void setup() {                
+    // assigning pin modes
+  //drive pins
+  pinMode(rightdrive, OUTPUT);
+  pinMode(leftdrive, OUTPUT); 
+  //debug pins
+  pinMode(debug1, OUTPUT);
+  pinMode(debug2, OUTPUT); 
+  //sensor pins
+  pinMode(pinlight, INPUT);
+  
+}
+//----------main program-------------------------
+void loop() {
+  
+  lightval = analogRead(pinlight);
+  
+  //wobble left
+  if (lightval < dline) {
+    void Ldriveforward(1);
+    void Rdriveforward(0);a
+  }
+  //wobble right
+  if (lightval > dline) {
+    void Rdriveforward(1);
+    void Ldriveforward(0);
+  }
+}
+
 //------------function library------------------
 
 //left drive function for time (ms)
@@ -84,36 +117,4 @@ void Rdriveforward(int dir) {
     digitalWrite(rightdrive, LOW);
   };
 }
-
-
-//----------program init--------------------------
-void setup() {                
-    // assigning pin modes
-  //drive pins
-  pinMode(rightdrive, OUTPUT);
-  pinMode(leftdrive, OUTPUT); 
-  //debug pins
-  pinMode(debug1, OUTPUT);
-  pinMode(debug2, OUTPUT); 
-  //sensor pins
-  pinMode(pinlight, INPUT);
-  
-}
-//----------main program-------------------------
-void loop() {
-  
-  lightval = analogRead(pinlight);
-  
-  //wobble left
-  if (lightval < dline) {
-    void Ldriveforward(1);
-    void Rdriveforward(0);a
-  }
-  //wobble right
-  if (lightval > dline) {
-    void Rdriveforward(1);
-    void Ldriveforward(0);
-  }
-}
-
 
